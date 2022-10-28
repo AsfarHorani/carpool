@@ -1,14 +1,14 @@
 package com.asfar.carpool.Models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import java.util.Date;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
-@Table(name = "rider")
-public class Rider {
+@Table(name = "customer")
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
@@ -17,7 +17,7 @@ public class Rider {
     @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     private Wallet wallet;
     @Temporal(TemporalType.TIMESTAMP)
-   private Date creationDateTime;
+    private Date creationDateTime;
     public long getId() {
         return id;
     }
@@ -33,6 +33,7 @@ public class Rider {
     public void setId(long id) {
         this.id = id;
     }
+
     public Wallet getWallet() {
         return wallet;
     }
@@ -43,8 +44,10 @@ public class Rider {
 
     @Override
     public String toString() {
-        return "Rider [id=" + id + ", wallet=" + wallet + "]";
+        return "Customer [id=" + id + ", wallet=" + wallet + "]";
     }
+    
+    
     
     
 }
